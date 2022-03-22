@@ -14,8 +14,11 @@ namespace GradeBook
             {
                 result += number;
             }
+            //Count contains numeber of items in the list
+            result = result / grades.Count; 
 
-            Console.WriteLine(result);
+            //:N2 - limits float number to only 2 digits
+            Console.WriteLine($"The average grade is {result:N2}");
         }
     }
 }
