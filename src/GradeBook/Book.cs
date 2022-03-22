@@ -5,7 +5,7 @@ namespace GradeBook
 {
     class Book
     {
-        private List<double> grades; //fild
+        private List<double> grades; //field
         private string name;
         public Book(string name) //constructor
         {
