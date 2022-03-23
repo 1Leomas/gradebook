@@ -6,10 +6,10 @@ namespace GradeBook
     public class Book
     {
         private List<double> grades; //field
-        private string name;
+        public string Name;
         public Book(string name) //constructor
         {
-            this.name = name;
+            this.Name = name;
             grades = new List<double>();
         }
         public void AddGrade(double grade) //method
