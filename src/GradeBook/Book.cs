@@ -3,17 +3,26 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
     public class Book
     {
         private List<double> grades; //field
-        public string Name;
+
+        public string Name
+        {
+            get; 
+            set;
+        }
+
+        public const string CATEGORY = "Science";
+
         public Book(string name) //constructor
         {
             this.Name = name;
             grades = new List<double>();
         }
 
-        public void AddLetterGrade(char letter)
+        public void AddGrade(char letter)
         {
             switch(letter)
             {
@@ -37,13 +46,19 @@ namespace GradeBook
             if(grade <= 100 && grade >= 0)
             {
                 grades.Add(grade);
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
                 throw new ArgumentException($"Invalid {nameof(grade)}");
-                //Console.WriteLine("Invalid value");
             }
         }
+
+        public event GradeAddedDelegate GradeAdded;
+
         public Statistics GetStatistics()
         {
             var result = new Statistics();
