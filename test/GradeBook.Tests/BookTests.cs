@@ -10,7 +10,7 @@ namespace GradeBook.Tests
             //ARRANGE - put together all test data
             //          and value that we are gonna to use
             
-            var book = new Book("");
+            var book = new InMemoryBook("");
             book.AddGrade(13.1);
             book.AddGrade(54.1);
             book.AddGrade(32.5);
