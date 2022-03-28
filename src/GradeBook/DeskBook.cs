@@ -8,14 +8,7 @@ namespace GradeBook
     {
         public DeskBook(string name) : base(name)
         {
-            // try
-            // {
-            //     FileStream file = File.Create($"/{name}.txt");
-            // }
-            // catch(Exception ex)
-            // {
-            //     Console.WriteLine(ex.Message);
-            // }
+
         }
         public override event GradeAddedDelegate GradeAdded;
         public override  void AddGrade(double grade)
